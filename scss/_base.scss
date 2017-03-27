@@ -9,7 +9,7 @@ body {
 
 	div.head {
 		padding: 1rem;
-		margin: 15% auto 0;
+		margin: 5% auto 0;
 		width: 85%;
 		height: 3rem;
 		background-color: #00CC99;
@@ -21,7 +21,7 @@ body {
 
 		margin-top: 1rem;
 
-		div.user-input {
+		div#user-input {
 			padding: 1rem;
 			background-color: #26547C;
 			width: 85%;
@@ -33,17 +33,26 @@ body {
 
 			div {
 				padding: .25rem;
+				margin: 1rem;
 
-				&:last-child {
-					margin-top: 1rem;
+				&#sort {
+					display: flex;
+					flex-direction: row;
+					justify-content: space-around;
+				}
+			}
+			input {
+				margin-left: 1rem;
+
+				&.error {
+				outline-color: red;
+				outline-style: solid;
 				}
 			}
 
-			label {
-				margin-right: 1rem;
-			}
-
-			input#submit_button {
+			input#submit_button,
+			input#sort_button {
+				margin-left: 1rem;
 				width: 4.5rem;
 				font-size: 1rem;
 				background-color: #FCFCFC;
@@ -58,6 +67,12 @@ body {
 					border: 1px solid #FCFCFC;
 					transform: scale(1.1);
 				}
+			}
+
+			p.error-message {
+				color: red;
+				font-size: 1.25rem;
+				display: none;
 			}
 		}
 

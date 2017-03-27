@@ -8,7 +8,7 @@ body {
   height: 100%; }
   body div.head {
     padding: 1rem;
-    margin: 15% auto 0;
+    margin: 5% auto 0;
     width: 85%;
     height: 3rem;
     background-color: #00CC99;
@@ -16,7 +16,7 @@ body {
     font-size: 3rem; }
   body div.section {
     margin-top: 1rem; }
-    body div.section div.user-input {
+    body div.section div#user-input {
       padding: 1rem;
       background-color: #26547C;
       width: 85%;
@@ -25,13 +25,21 @@ body {
       font-size: 1.2rem;
       display: flex;
       flex-direction: column; }
-      body div.section div.user-input div {
-        padding: .25rem; }
-        body div.section div.user-input div:last-child {
-          margin-top: 1rem; }
-      body div.section div.user-input label {
-        margin-right: 1rem; }
-      body div.section div.user-input input#submit_button {
+      body div.section div#user-input div {
+        padding: .25rem;
+        margin: 1rem; }
+        body div.section div#user-input div#sort {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around; }
+      body div.section div#user-input input {
+        margin-left: 1rem; }
+        body div.section div#user-input input.error {
+          outline-color: red;
+          outline-style: solid; }
+      body div.section div#user-input input#submit_button,
+      body div.section div#user-input input#sort_button {
+        margin-left: 1rem;
         width: 4.5rem;
         font-size: 1rem;
         background-color: #FCFCFC;
@@ -39,11 +47,16 @@ body {
         border-radius: 10px;
         border: none;
         transition: .8s; }
-        body div.section div.user-input input#submit_button:hover {
+        body div.section div#user-input input#submit_button:hover,
+        body div.section div#user-input input#sort_button:hover {
           background-color: #26547C;
           color: #FCFCFC;
           border: 1px solid #FCFCFC;
           transform: scale(1.1); }
+      body div.section div#user-input p.error-message {
+        color: red;
+        font-size: 1.25rem;
+        display: none; }
     body div.section div.list-content ul li {
       margin: 1rem auto;
       background-color: #EF476F;

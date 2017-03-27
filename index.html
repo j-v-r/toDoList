@@ -15,9 +15,19 @@
 
 	<div class='section'>
 
-		<div class='user-input'>
+		<div id='user-input'>
 			<div>
-			<label for='input_value'>Write Your Task:</label><input id='input_value' type="text"> </div> <div> <label for="submit_button">Add Task:</label><input id='submit_button' type="submit"> </div>
+				<label for='input_value'>Write Your Task:</label><input id='input_value' type="text"> 
+			</div> 
+			<p id='error' class='error-message'>Please add a value to the input field</p>
+			<div> 
+				<label for="submit_button">Add Task:</label><input id='submit_button' type="submit"> 
+			</div>
+			<div id='sort'>
+				<label for='sort_button'>Sort chronologically:</label>
+				<input id='sort_button' type='button' value='Sort'>
+				<p id='sort-heading'>First to Last</p>
+			</div>
 		</div>
 
 		<div class='list-content'>
