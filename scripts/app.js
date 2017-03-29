@@ -33,9 +33,16 @@ var toDoList = {
 	removeTask: function() {
 					for(var i = 0; i < deleteButtons.length; i++) {
 						deleteButtons[i].addEventListener('click', (e) => {
-						e.target.parentElement.style.display = 'none';
-						// deleteTask();
-					})
+						var parentLi = e.target.parentElement;
+						var liText = parentLi.textContent;
+						var index = this.tasks.indexOf(liText);
+
+						if(index > -1) {
+							this.tasks.splice(index, 1);
+							parentLi.style.display = 'none';
+						}
+				
+					});
 				}
 			}
 };
@@ -51,13 +58,6 @@ function removeErrorMessage() {
 	error.style.display = 'none';
 	input.className = '';
 }
-
-// function deleteTask() {
-// 	for(i = 0; i < toDoList.tasks; i++) {
-// 		var array = toDoList.tasks;
-// 		array.splice(i, array[i]);
-// 	}
-// }
 
 // Add task event handler
 submit.addEventListener('click', () => {
@@ -80,25 +80,14 @@ submit.addEventListener('click', () => {
 
 });
 
-// Remove task event handler
-// function removeTask() {
-// 		for(var i = 0; i < deleteButtons.length; i++) {
-// 		deleteButtons[i].addEventListener('click', (e) => {
-// 		e.target.parentElement.style.display = 'none';
-// 		});
-// 	}
-// }
-
 sortButton.addEventListener('click', (e) => { 
 	let sortHeading = document.getElementById('sort-heading');
 	let listItems = list.children;
 	let tasks = toDoList.tasks;
-	
-	li.reverse();
-	
-	// toDoList.tasks.reverse();
-	// toDoList.displayTasks(listItems, tasks);
-	// toDoList.removeTask();
+
+	toDoList.tasks.reverse();
+	toDoList.displayTasks(listItems, tasks);
+	toDoList.removeTask();
 
 	if(sortHeading.textContent == 'First to Last') {
 		sortHeading.textContent = 'Last to First';
